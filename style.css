@@ -1,0 +1,117 @@
+/* Global */
+:root{
+    /* Source of colors: https://colorhunt.co/palette/ff65001e3e620b192c000000 */
+    --color-primary: #FF6500;
+    --color-main-txt: #000000;
+    --color-secondary: #1E3E62;
+    --color-third: #0B192C;
+    --font-main: sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: var(--color-secondary);
+}
+
+body{
+    font-family: var(--font-main);
+}
+
+.container{
+    padding: 0 3rem;
+}
+
+/* Header */
+header{
+    padding: 1rem 0;
+    background-color: var(--color-primary);
+    border-bottom:1px solid var(--color-third) ;
+
+    .logo{
+        width: 29%;
+        display: inline-block;
+    }
+
+    .links{
+        width: 69%;
+        display: inline-block;
+        text-align: right;
+    
+        li{
+            display: inline-block; 
+        }
+        li:first-child{
+            margin-right: 1rem;
+        }
+    }
+}
+
+/* Hero Section */
+.hero{
+    height: calc(100vh - 3.8rem);
+    background-image: linear-gradient(to top,
+                       var(--color-secondary),
+                       var(--color-third), 
+                       var(--color-third));
+    position: relative;
+
+    .text{
+        text-align: center;
+        position: absolute;
+        top: 35%;
+        left: 35%;
+        
+        h1{
+            font-size: 5rem;
+            color: whitesmoke;
+        }
+        
+        p{
+            color: gray;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        a{
+            background-color: var(--color-primary);
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            font-size: 1.25rem;
+            text-decoration: none;
+        }
+    }
+}
+
+/* About Section */
+.about{
+    min-width: calc(100% - 2rem);
+    padding: 1rem 0;
+        .name {
+            width: 15%;
+            display: inline-block;
+            margin-right: 4%;
+        }
+    
+        .aboutMe{
+            width: 80%;
+            display: inline-block;
+            text-align: justify;
+        }
+}
+
+/* Footer */
+footer{
+    background-color: var(--color-primary);
+    padding: 1rem 0 ;
+    text-align: center;
+    font-size: xx-large;
+    a{
+        color: var(--color-main-txt);
+    }
+}
