@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+        integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>NTI-task2</title>
+</head>
+
+<body>
+    <heade>
+        <nav class="navbar navbar-expand-lg bg-dark shadow-sm">
+            <div class="container">
+                <a class="navbar-brand text-light" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-primary" id="theme">Theme</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="hero">
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <svg class="w-100" height="30rem" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="w-100 h-100" fill="#000e3e" />
+                    </svg>
+                    <div class="carousel-caption d-block my-5 text-start">
+                        <h1>First slide label</h1>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <svg class="w-100" height="30rem" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="w-100 h-100" fill="#ccce3e" />
+                    </svg>
+                    <div class="carousel-caption d-block my-5 text-center">
+                        <h1>Second slide label</h1>
+                        <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <svg class="w-100" height="30rem" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="w-100 h-100" fill="#cccddd" />
+                    </svg>
+                    <div class="carousel-caption d-block my-5 text-end">
+                        <h1>Third slide label</h1>
+                        <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+    <section class="cards my-5">
+        <div class="container">
+            <div class="row gap-5 justify-content-center">
+                <div class="col text-center">
+                    <svg class="rounded-circle mb-3" width="10rem" height="10rem" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="w-100 h-100" fill="#000" />
+                    </svg>
+                    <h2>Heading</h2>
+                    <p>Some representative placeholder content for the three columns of text below the carousel. This is
+                        the first column.</p>
+                    <a href="#" class="btn btn-secondary">View details >></a>
+                </div>
+                <div class="col text-center">
+                    <svg class="rounded-circle mb-3" width="10rem" height="10rem" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="w-100 h-100" fill="#000" />
+                    </svg>
+                    <h2>Heading</h2>
+                    <p>Some representative placeholder content for the three columns of text below the carousel. This is
+                        the first column.</p>
+                    <a href="#" class="btn btn-secondary">View details >></a>
+                </div>
+                <div class="col text-center">
+                    <svg class="rounded-circle mb-3" width="10rem" height="10rem" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="w-100 h-100" fill="#000" />
+                    </svg>
+                    <h2>Heading</h2>
+                    <p>Some representative placeholder content for the three columns of text below the carousel. This is
+                        the first column.</p>
+                    <a href="#" class="btn btn-secondary">View details >></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="features my-5">
+        <div class="container">
+            <hr>
+            <div class="feature my-5 row">
+                <div class="text d-flex flex-column justify-content-center col">
+                    <h2 style="font-size: 3rem;" class="text-dark">Feature heading. <span class="text-secondary">It'll
+                            blow your mind.</span></h2>
+                    <p class="text-secondary" style="font-size: 1.2rem;">Some great placeholder content for the first
+                        featurette here. Imagine some exciting prose here.</p>
+                </div>
+                <div class="col text-center">
+                    <svg class="img" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="500px" height="500px" fill="#eee" />
+                    </svg>
+                </div>
+            </div>
+            <hr>
+            <div class="feature my-5 row flex-row-reverse">
+                <div class="text d-flex flex-column justify-content-center col">
+                    <h2 style="font-size: 3rem;" class="text-dark">Feature heading. <span class="text-secondary">It'll
+                            blow your mind.</span></h2>
+                    <p class="text-secondary" style="font-size: 1.2rem;">Some great placeholder content for the first
+                        featurette here. Imagine some exciting prose here.</p>
+                </div>
+                <div class="col text-center">
+                    <svg class="img" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="500px" height="500px" fill="#eee" />
+                    </svg>
+                </div>
+            </div>
+            <hr>
+            <div class="feature my-5 row">
+                <div class="text d-flex flex-column justify-content-center col">
+                    <h2 style="font-size: 3rem;" class="text-dark">Feature heading. <span class="text-secondary">It'll
+                            blow your mind.</span></h2>
+                    <p class="text-secondary" style="font-size: 1.2rem;">Some great placeholder content for the first
+                        featurette here. Imagine some exciting prose here.</p>
+                </div>
+                <div class="col text-center">
+                    <svg class="img" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="500px" height="500px" fill="#eee" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-dark text-light">
+        <div class="container">
+
+            <div class="name">Ali Mohamed Ali</div>
+            <ul class="links">
+                <li><a class="text-light" href="https://getbootstrap.com/docs/5.0/examples/carousel/" title="Source"
+                        target="_blank"><i class="fa-solid fa-file-code"></i></a></li>
+                <li><a class="text-light" href="#" title="Facebook" target="_blank"><i
+                            class="fa-brands fa-facebook"></i></a></li>
+                <li><a class="text-light" href="https://www.linkedin.com/in/ali-hegazy1992" title="Linkedin"
+                        target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
