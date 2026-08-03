@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة الأسئلة والإجابات المصورة</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --primary: #2563eb;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* كارت السؤال */
+        .question-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .badge {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: bold;
+        }
+
+        .question-image-wrapper {
+            width: 100%;
+            max-height: 450px;
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: #f1f5f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .question-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* شبكة الإجابات المصورة */
+        .answers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .answer-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .answer-step {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        .answer-image-wrapper {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #f1f5f9;
+            cursor: pointer;
+        }
+
+        .answer-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .answer-image-wrapper img:hover, .question-image-wrapper img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Lightbox CSS */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #lightbox.active {
+            display: flex;
+        }
+
+        #lightbox-img {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .close-btn:hover {
+            color: #ccc;
+        }
+
+        /* Responsive Tweaks */
+        @media (max-width: 640px) {
+            body {
+                padding: 12px;
+            }
+            .answers-grid {
+                grid-template-columns: 1fr;
+            }
+            .close-btn {
+                right: 15px;
+                top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        
+        <section class="question-card">
+            <div class="section-header">
+                <span class="badge">First Quest</span>
+            </div>
+            <div class="question-image-wrapper">
+                <img class="viewable-image" src="./assets/quest/quest1.jpg" alt="Question Picture">
+            </div>
+        </section>
+
+        <section class="question-card">
+            <div class="section-header">
+                <span class="badge" style="background-color: #059669;">answer</span>
+            </div>
+            
+            <div class="answers-grid">
+                
+                <article class="answer-card">
+                    <div class="answer-image-wrapper">
+                        <img class="viewable-image" src="./assets/ans/1-1.png" alt="First part">
+                    </div>
+                </article>
+
+                <article class="answer-card">
+                    <div class="answer-image-wrapper">
+                        <img class="viewable-image" src="./assets/ans/1-2.png" alt="Second part">
+                    </div>
+                </article>
+
+                <article class="answer-card">
+                    <div class="answer-image-wrapper">
+                        <img class="viewable-image" src="./assets/ans/1-3.png" alt="Third part">
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="question-card">
+            <div class="section-header">
+                <span class="badge">Second Quest</span>
+            </div>
+            <div class="question-image-wrapper">
+                <img class="viewable-image" src="./assets/quest/quest2.jpg" alt="Question Picture">
+            </div>
+        </section>
+
+        <section class="question-card">
+            <div class="section-header">
+                <span class="badge" style="background-color: #059669;">answer</span>
+            </div>
+            
+            <div class="answers-grid">
+                
+                <article class="answer-card">
+                    <div class="answer-image-wrapper">
+                        <img class="viewable-image" src="./assets/ans/2-1.png" alt="First part">
+                    </div>
+                </article>
+
+                <article class="answer-card">
+                    <div class="answer-image-wrapper">
+                        <img class="viewable-image" src="./assets/ans/2-2.png" alt="Second part">
+                    </div>
+                </article>
+
+                <article class="answer-card">
+                    <div class="answer-image-wrapper">
+                        <img class="viewable-image" src="./assets/ans/2-3.png" alt="Third part">
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="question-card">
+            <div class="section-header">
+                <span class="badge">Second Quest</span>
+            </div>
+            <div class="question-image-wrapper">
+                <img class="viewable-image" src="./assets/quest/quest3.jpg" alt="Question Picture">
+            </div>
+        </section>
+
+        <section class="question-card">
+            <div class="section-header">
+                <span class="badge" style="background-color: #059669;">answer</span>
+            </div>
+            
+            <div class="answers-grid">
+                
+                <article class="answer-card">
+                    <div class="answer-image-wrapper">
+                        <img class="viewable-image" src="./assets/ans/3-1.png" alt="First part">
+                    </div>
+                </article>
+
+                <article class="answer-card">
+                    <div class="answer-image-wrapper">
+                        <img class="viewable-image" src="./assets/ans/3-2.png" alt="Second part">
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <div id="lightbox">
+        <span class="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="Magnified image">
+    </div>
+
+    <script>
+        alert('This site and the dummy data in tables is AI generated, but the answers is not AI generated')
+
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.close-btn');
+        const images = document.querySelectorAll('.viewable-image');
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        closeBtn.addEventListener('click', closeLightbox);
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
